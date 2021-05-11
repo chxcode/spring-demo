@@ -13,7 +13,7 @@ public class OrderServiceImpl implements OrderService{
     private static Order order = null;
 
     @Override
-    public Order creatOrder(String userName, String product) {
+    public Order createOrder(String userName, String product) {
         order = new Order(userName, product);
         return order;
     }

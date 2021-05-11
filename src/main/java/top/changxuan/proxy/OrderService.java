@@ -4,7 +4,7 @@ import top.changxuan.domain.Order;
 
 public interface OrderService {
 
-    Order creatOrder(String userName, String product);
+    Order createOrder(String userName, String product);
 
     Order queryOrder(String userName);
 
