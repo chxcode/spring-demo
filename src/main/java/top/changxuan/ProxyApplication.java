@@ -15,7 +15,11 @@ public class ProxyApplication {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1.xml");
+        // 针对全部方法进行增强，类粒度
+        // ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1.xml");
+
+        // 针对指定方法进行增强， 方法粒度
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1_advisor.xml");
 
         UserService userService = (UserService) context.getBean("userServiceProxy");
 
@@ -25,7 +29,7 @@ public class ProxyApplication {
 
         OrderService orderService = (OrderService) context.getBean("orderServiceProxy");
 
-        orderService.creatOrder("changxuan", "apple");
+        orderService.createOrder("changxuan", "apple");
 
         orderService.queryOrder("chang");
     }
