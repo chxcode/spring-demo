@@ -14,7 +14,11 @@ import top.changxuan.proxy.UserService;
 public class AutoProxyApplication {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1_autoproxy.xml");
+        // autoproxy
+        // ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1_autoproxy.xml");
+
+        // DefaultAdvisorAutoProxy
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application_1_DefaultAdvisorAutoProxy.xml");
 
         UserService userService = context.getBean(UserService.class);
 
